@@ -72,7 +72,7 @@ ELA_LBL: 'ELABORACION';
 LIST_ORDER_SEP: ')';
 COM: ',';
 SEP: ':';
-TAB: '\t' | ' ' {4};
+TAB: '\t';
 WS: ' '+;
 NL: '\n';
 

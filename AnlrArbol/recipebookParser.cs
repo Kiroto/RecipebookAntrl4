@@ -60,7 +60,7 @@ public partial class recipebookParser : Parser {
 		null, "'min'", "'minute'", "'sec'", "'second'", "'hr'", "'hour'", "'day'", 
 		"'s'", null, "'-'", "'RECETA'", "'PORCIONES'", "'TIEMPO PREPARACION'", 
 		"'TIEMPO COCCION'", "'CALORIAS'", "'INGREDIENTES'", "'ELABORACION'", "')'", 
-		"','", "':'", null, null, "'\n'"
+		"','", "':'", "'\t'", null, "'\n'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, "LINE_START", "GUION", 
