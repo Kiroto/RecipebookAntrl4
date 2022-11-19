@@ -39,7 +39,7 @@ public partial class recipebookParser : Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, LINE_START=9, 
 		GUION=10, REC_LBL=11, POR_LBL=12, TMP_LBL=13, TMC_LBL=14, CAL_LBL=15, 
 		ING_LBL=16, ELA_LBL=17, LIST_ORDER_SEP=18, COM=19, SEP=20, TAB=21, WS=22, 
-		NL=23, NUMBER=24, FLOAT=25, INT=26, TEXT=27, WORD=28;
+		NL=23, NUMBER=24, FLOAT=25, INT=26, TEXT=27, WORD=28, CARRRET=29;
 	public const int
 		RULE_recipebook = 0, RULE_book = 1, RULE_entry = 2, RULE_recipe_tag = 3, 
 		RULE_recipe_name = 4, RULE_portions_tag = 5, RULE_portion_unit = 6, RULE_prep_time_tag = 7, 
@@ -60,13 +60,13 @@ public partial class recipebookParser : Parser {
 		null, "'min'", "'minute'", "'sec'", "'second'", "'hr'", "'hour'", "'day'", 
 		"'s'", null, "'-'", "'RECETA'", "'PORCIONES'", "'TIEMPO PREPARACION'", 
 		"'TIEMPO COCCION'", "'CALORIAS'", "'INGREDIENTES'", "'ELABORACION'", "')'", 
-		"','", "':'", "'\t'", null, "'\n'"
+		"','", "':'", "'\t'", null, "'\n'", null, null, null, null, null, "'\r'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, "LINE_START", "GUION", 
 		"REC_LBL", "POR_LBL", "TMP_LBL", "TMC_LBL", "CAL_LBL", "ING_LBL", "ELA_LBL", 
 		"LIST_ORDER_SEP", "COM", "SEP", "TAB", "WS", "NL", "NUMBER", "FLOAT", 
-		"INT", "TEXT", "WORD"
+		"INT", "TEXT", "WORD", "CARRRET"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -1309,7 +1309,7 @@ public partial class recipebookParser : Parser {
 
 	private static char[] _serializedATN = {
 		'\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786', 
-		'\x5964', '\x3', '\x1E', '\xAB', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
+		'\x5964', '\x3', '\x1F', '\xAB', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
 		'\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4', 
 		'\x6', '\t', '\x6', '\x4', '\a', '\t', '\a', '\x4', '\b', '\t', '\b', 
 		'\x4', '\t', '\t', '\t', '\x4', '\n', '\t', '\n', '\x4', '\v', '\t', '\v', 

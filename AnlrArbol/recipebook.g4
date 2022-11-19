@@ -83,3 +83,4 @@ INT: [0-9]+;
 
 TEXT: WORD (WS WORD)*;
 WORD: [A-Za-z_]+;
+CARRRET: '\r' -> skip;
