@@ -146,6 +146,12 @@ public interface IrecipebookVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitElaboration_list_item([NotNull] recipebookParser.Elaboration_list_itemContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="recipebookParser.list_order"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitList_order([NotNull] recipebookParser.List_orderContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="recipebookParser.order"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

@@ -9,21 +9,21 @@ entry:
 		elaboration_tag;
 
 // recipe
-recipe_tag: LINE_START REC_LBL SEP recipe_name NL;
+recipe_tag: LINE_START REC_LBL SEP WS recipe_name NL;
 recipe_name: TEXT;
 
 // portion
-portions_tag: LINE_START POR_LBL SEP amount WS portion_unit NL;
+portions_tag: LINE_START POR_LBL SEP WS amount WS portion_unit NL;
 portion_unit: TEXT;
 
 // prep time
-prep_time_tag: LINE_START TMP_LBL SEP time NL;
+prep_time_tag: LINE_START TMP_LBL SEP WS time NL;
 
 // cooking time
-cooking_time_tag: LINE_START TMC_LBL SEP time NL;
+cooking_time_tag: LINE_START TMC_LBL SEP WS time NL;
 
 // calories
-calories_tag: LINE_START CAL_LBL SEP calories_content NL;
+calories_tag: LINE_START CAL_LBL SEP WS calories_content NL;
 calories_content: amount WS calorie_unit;
 calorie_unit: TEXT;
 
@@ -39,8 +39,9 @@ elaboration_tag:
 	LINE_START ELA_LBL SEP NL elaboration_list NL?;
 elaboration_list:
 	elaboration_list_item (NL elaboration_list_item)*;
-elaboration_list_item: order LIST_ORDER_SEP WS instruction;
-order: INT;
+elaboration_list_item: TAB list_order WS instruction;
+list_order: order LIST_ORDER_SEP;
+order: NUMBER;
 instruction: TEXT;
 
 // General units
@@ -76,11 +77,10 @@ TAB: '\t';
 WS: ' '+;
 NL: '\n';
 
-NUMBER: INT | FLOAT;
-FLOAT: [0-9]+ '.' [0-9]+;
-
-INT: [0-9]+;
 
 TEXT: WORD (WS WORD)*;
 WORD: [A-Za-z_]+;
+NUMBER: INTEGER | FLOAT;
+FLOAT: [0-9]+ '.' [0-9]+;
+INTEGER: [0-9]+;
 CARRRET: '\r' -> skip;

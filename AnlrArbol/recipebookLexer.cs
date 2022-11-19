@@ -36,7 +36,7 @@ public partial class recipebookLexer : Lexer {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, LINE_START=9, 
 		GUION=10, REC_LBL=11, POR_LBL=12, TMP_LBL=13, TMC_LBL=14, CAL_LBL=15, 
 		ING_LBL=16, ELA_LBL=17, LIST_ORDER_SEP=18, COM=19, SEP=20, TAB=21, WS=22, 
-		NL=23, NUMBER=24, FLOAT=25, INT=26, TEXT=27, WORD=28, CARRRET=29;
+		NL=23, TEXT=24, WORD=25, NUMBER=26, FLOAT=27, INTEGER=28, CARRRET=29;
 	public static string[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -48,8 +48,8 @@ public partial class recipebookLexer : Lexer {
 	public static readonly string[] ruleNames = {
 		"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "LINE_START", 
 		"GUION", "REC_LBL", "POR_LBL", "TMP_LBL", "TMC_LBL", "CAL_LBL", "ING_LBL", 
-		"ELA_LBL", "LIST_ORDER_SEP", "COM", "SEP", "TAB", "WS", "NL", "NUMBER", 
-		"FLOAT", "INT", "TEXT", "WORD", "CARRRET"
+		"ELA_LBL", "LIST_ORDER_SEP", "COM", "SEP", "TAB", "WS", "NL", "TEXT", 
+		"WORD", "NUMBER", "FLOAT", "INTEGER", "CARRRET"
 	};
 
 
@@ -71,8 +71,8 @@ public partial class recipebookLexer : Lexer {
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, "LINE_START", "GUION", 
 		"REC_LBL", "POR_LBL", "TMP_LBL", "TMC_LBL", "CAL_LBL", "ING_LBL", "ELA_LBL", 
-		"LIST_ORDER_SEP", "COM", "SEP", "TAB", "WS", "NL", "NUMBER", "FLOAT", 
-		"INT", "TEXT", "WORD", "CARRRET"
+		"LIST_ORDER_SEP", "COM", "SEP", "TAB", "WS", "NL", "TEXT", "WORD", "NUMBER", 
+		"FLOAT", "INTEGER", "CARRRET"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -142,13 +142,13 @@ public partial class recipebookLexer : Lexer {
 		'\x3', '\x13', '\x3', '\x13', '\x3', '\x14', '\x3', '\x14', '\x3', '\x15', 
 		'\x3', '\x15', '\x3', '\x16', '\x3', '\x16', '\x3', '\x17', '\x6', '\x17', 
 		'\xC5', '\n', '\x17', '\r', '\x17', '\xE', '\x17', '\xC6', '\x3', '\x18', 
-		'\x3', '\x18', '\x3', '\x19', '\x3', '\x19', '\x5', '\x19', '\xCD', '\n', 
-		'\x19', '\x3', '\x1A', '\x6', '\x1A', '\xD0', '\n', '\x1A', '\r', '\x1A', 
-		'\xE', '\x1A', '\xD1', '\x3', '\x1A', '\x3', '\x1A', '\x6', '\x1A', '\xD6', 
-		'\n', '\x1A', '\r', '\x1A', '\xE', '\x1A', '\xD7', '\x3', '\x1B', '\x6', 
-		'\x1B', '\xDB', '\n', '\x1B', '\r', '\x1B', '\xE', '\x1B', '\xDC', '\x3', 
-		'\x1C', '\x3', '\x1C', '\x3', '\x1C', '\x3', '\x1C', '\a', '\x1C', '\xE3', 
-		'\n', '\x1C', '\f', '\x1C', '\xE', '\x1C', '\xE6', '\v', '\x1C', '\x3', 
+		'\x3', '\x18', '\x3', '\x19', '\x3', '\x19', '\x3', '\x19', '\x3', '\x19', 
+		'\a', '\x19', '\xCF', '\n', '\x19', '\f', '\x19', '\xE', '\x19', '\xD2', 
+		'\v', '\x19', '\x3', '\x1A', '\x6', '\x1A', '\xD5', '\n', '\x1A', '\r', 
+		'\x1A', '\xE', '\x1A', '\xD6', '\x3', '\x1B', '\x3', '\x1B', '\x5', '\x1B', 
+		'\xDB', '\n', '\x1B', '\x3', '\x1C', '\x6', '\x1C', '\xDE', '\n', '\x1C', 
+		'\r', '\x1C', '\xE', '\x1C', '\xDF', '\x3', '\x1C', '\x3', '\x1C', '\x6', 
+		'\x1C', '\xE4', '\n', '\x1C', '\r', '\x1C', '\xE', '\x1C', '\xE5', '\x3', 
 		'\x1D', '\x6', '\x1D', '\xE9', '\n', '\x1D', '\r', '\x1D', '\xE', '\x1D', 
 		'\xEA', '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1E', '\x2', 
 		'\x2', '\x1F', '\x3', '\x3', '\x5', '\x4', '\a', '\x5', '\t', '\x6', '\v', 
@@ -157,8 +157,8 @@ public partial class recipebookLexer : Lexer {
 		'!', '\x12', '#', '\x13', '%', '\x14', '\'', '\x15', ')', '\x16', '+', 
 		'\x17', '-', '\x18', '/', '\x19', '\x31', '\x1A', '\x33', '\x1B', '\x35', 
 		'\x1C', '\x37', '\x1D', '\x39', '\x1E', ';', '\x1F', '\x3', '\x2', '\x4', 
-		'\x3', '\x2', '\x32', ';', '\x5', '\x2', '\x43', '\\', '\x61', '\x61', 
-		'\x63', '|', '\x2', '\xF6', '\x2', '\x3', '\x3', '\x2', '\x2', '\x2', 
+		'\x5', '\x2', '\x43', '\\', '\x61', '\x61', '\x63', '|', '\x3', '\x2', 
+		'\x32', ';', '\x2', '\xF6', '\x2', '\x3', '\x3', '\x2', '\x2', '\x2', 
 		'\x2', '\x5', '\x3', '\x2', '\x2', '\x2', '\x2', '\a', '\x3', '\x2', '\x2', 
 		'\x2', '\x2', '\t', '\x3', '\x2', '\x2', '\x2', '\x2', '\v', '\x3', '\x2', 
 		'\x2', '\x2', '\x2', '\r', '\x3', '\x2', '\x2', '\x2', '\x2', '\xF', '\x3', 
@@ -188,8 +188,8 @@ public partial class recipebookLexer : Lexer {
 		'\x2', '\'', '\xBD', '\x3', '\x2', '\x2', '\x2', ')', '\xBF', '\x3', '\x2', 
 		'\x2', '\x2', '+', '\xC1', '\x3', '\x2', '\x2', '\x2', '-', '\xC4', '\x3', 
 		'\x2', '\x2', '\x2', '/', '\xC8', '\x3', '\x2', '\x2', '\x2', '\x31', 
-		'\xCC', '\x3', '\x2', '\x2', '\x2', '\x33', '\xCF', '\x3', '\x2', '\x2', 
-		'\x2', '\x35', '\xDA', '\x3', '\x2', '\x2', '\x2', '\x37', '\xDE', '\x3', 
+		'\xCA', '\x3', '\x2', '\x2', '\x2', '\x33', '\xD4', '\x3', '\x2', '\x2', 
+		'\x2', '\x35', '\xDA', '\x3', '\x2', '\x2', '\x2', '\x37', '\xDD', '\x3', 
 		'\x2', '\x2', '\x2', '\x39', '\xE8', '\x3', '\x2', '\x2', '\x2', ';', 
 		'\xEC', '\x3', '\x2', '\x2', '\x2', '=', '>', '\a', 'o', '\x2', '\x2', 
 		'>', '?', '\a', 'k', '\x2', '\x2', '?', '@', '\a', 'p', '\x2', '\x2', 
@@ -269,34 +269,34 @@ public partial class recipebookLexer : Lexer {
 		'\x2', '\xC6', '\xC4', '\x3', '\x2', '\x2', '\x2', '\xC6', '\xC7', '\x3', 
 		'\x2', '\x2', '\x2', '\xC7', '.', '\x3', '\x2', '\x2', '\x2', '\xC8', 
 		'\xC9', '\a', '\f', '\x2', '\x2', '\xC9', '\x30', '\x3', '\x2', '\x2', 
-		'\x2', '\xCA', '\xCD', '\x5', '\x35', '\x1B', '\x2', '\xCB', '\xCD', '\x5', 
-		'\x33', '\x1A', '\x2', '\xCC', '\xCA', '\x3', '\x2', '\x2', '\x2', '\xCC', 
-		'\xCB', '\x3', '\x2', '\x2', '\x2', '\xCD', '\x32', '\x3', '\x2', '\x2', 
-		'\x2', '\xCE', '\xD0', '\t', '\x2', '\x2', '\x2', '\xCF', '\xCE', '\x3', 
+		'\x2', '\xCA', '\xD0', '\x5', '\x33', '\x1A', '\x2', '\xCB', '\xCC', '\x5', 
+		'-', '\x17', '\x2', '\xCC', '\xCD', '\x5', '\x33', '\x1A', '\x2', '\xCD', 
+		'\xCF', '\x3', '\x2', '\x2', '\x2', '\xCE', '\xCB', '\x3', '\x2', '\x2', 
+		'\x2', '\xCF', '\xD2', '\x3', '\x2', '\x2', '\x2', '\xD0', '\xCE', '\x3', 
 		'\x2', '\x2', '\x2', '\xD0', '\xD1', '\x3', '\x2', '\x2', '\x2', '\xD1', 
-		'\xCF', '\x3', '\x2', '\x2', '\x2', '\xD1', '\xD2', '\x3', '\x2', '\x2', 
-		'\x2', '\xD2', '\xD3', '\x3', '\x2', '\x2', '\x2', '\xD3', '\xD5', '\a', 
-		'\x30', '\x2', '\x2', '\xD4', '\xD6', '\t', '\x2', '\x2', '\x2', '\xD5', 
+		'\x32', '\x3', '\x2', '\x2', '\x2', '\xD2', '\xD0', '\x3', '\x2', '\x2', 
+		'\x2', '\xD3', '\xD5', '\t', '\x2', '\x2', '\x2', '\xD4', '\xD3', '\x3', 
+		'\x2', '\x2', '\x2', '\xD5', '\xD6', '\x3', '\x2', '\x2', '\x2', '\xD6', 
 		'\xD4', '\x3', '\x2', '\x2', '\x2', '\xD6', '\xD7', '\x3', '\x2', '\x2', 
-		'\x2', '\xD7', '\xD5', '\x3', '\x2', '\x2', '\x2', '\xD7', '\xD8', '\x3', 
-		'\x2', '\x2', '\x2', '\xD8', '\x34', '\x3', '\x2', '\x2', '\x2', '\xD9', 
-		'\xDB', '\t', '\x2', '\x2', '\x2', '\xDA', '\xD9', '\x3', '\x2', '\x2', 
-		'\x2', '\xDB', '\xDC', '\x3', '\x2', '\x2', '\x2', '\xDC', '\xDA', '\x3', 
-		'\x2', '\x2', '\x2', '\xDC', '\xDD', '\x3', '\x2', '\x2', '\x2', '\xDD', 
-		'\x36', '\x3', '\x2', '\x2', '\x2', '\xDE', '\xE4', '\x5', '\x39', '\x1D', 
-		'\x2', '\xDF', '\xE0', '\x5', '-', '\x17', '\x2', '\xE0', '\xE1', '\x5', 
-		'\x39', '\x1D', '\x2', '\xE1', '\xE3', '\x3', '\x2', '\x2', '\x2', '\xE2', 
-		'\xDF', '\x3', '\x2', '\x2', '\x2', '\xE3', '\xE6', '\x3', '\x2', '\x2', 
-		'\x2', '\xE4', '\xE2', '\x3', '\x2', '\x2', '\x2', '\xE4', '\xE5', '\x3', 
-		'\x2', '\x2', '\x2', '\xE5', '\x38', '\x3', '\x2', '\x2', '\x2', '\xE6', 
-		'\xE4', '\x3', '\x2', '\x2', '\x2', '\xE7', '\xE9', '\t', '\x3', '\x2', 
+		'\x2', '\xD7', '\x34', '\x3', '\x2', '\x2', '\x2', '\xD8', '\xDB', '\x5', 
+		'\x39', '\x1D', '\x2', '\xD9', '\xDB', '\x5', '\x37', '\x1C', '\x2', '\xDA', 
+		'\xD8', '\x3', '\x2', '\x2', '\x2', '\xDA', '\xD9', '\x3', '\x2', '\x2', 
+		'\x2', '\xDB', '\x36', '\x3', '\x2', '\x2', '\x2', '\xDC', '\xDE', '\t', 
+		'\x3', '\x2', '\x2', '\xDD', '\xDC', '\x3', '\x2', '\x2', '\x2', '\xDE', 
+		'\xDF', '\x3', '\x2', '\x2', '\x2', '\xDF', '\xDD', '\x3', '\x2', '\x2', 
+		'\x2', '\xDF', '\xE0', '\x3', '\x2', '\x2', '\x2', '\xE0', '\xE1', '\x3', 
+		'\x2', '\x2', '\x2', '\xE1', '\xE3', '\a', '\x30', '\x2', '\x2', '\xE2', 
+		'\xE4', '\t', '\x3', '\x2', '\x2', '\xE3', '\xE2', '\x3', '\x2', '\x2', 
+		'\x2', '\xE4', '\xE5', '\x3', '\x2', '\x2', '\x2', '\xE5', '\xE3', '\x3', 
+		'\x2', '\x2', '\x2', '\xE5', '\xE6', '\x3', '\x2', '\x2', '\x2', '\xE6', 
+		'\x38', '\x3', '\x2', '\x2', '\x2', '\xE7', '\xE9', '\t', '\x3', '\x2', 
 		'\x2', '\xE8', '\xE7', '\x3', '\x2', '\x2', '\x2', '\xE9', '\xEA', '\x3', 
 		'\x2', '\x2', '\x2', '\xEA', '\xE8', '\x3', '\x2', '\x2', '\x2', '\xEA', 
 		'\xEB', '\x3', '\x2', '\x2', '\x2', '\xEB', ':', '\x3', '\x2', '\x2', 
 		'\x2', '\xEC', '\xED', '\a', '\xF', '\x2', '\x2', '\xED', '\xEE', '\x3', 
 		'\x2', '\x2', '\x2', '\xEE', '\xEF', '\b', '\x1E', '\x2', '\x2', '\xEF', 
-		'<', '\x3', '\x2', '\x2', '\x2', '\n', '\x2', '\xC6', '\xCC', '\xD1', 
-		'\xD7', '\xDC', '\xE4', '\xEA', '\x3', '\b', '\x2', '\x2',
+		'<', '\x3', '\x2', '\x2', '\x2', '\n', '\x2', '\xC6', '\xD0', '\xD6', 
+		'\xDA', '\xDF', '\xE5', '\xEA', '\x3', '\b', '\x2', '\x2',
 	};
 
 	public static readonly ATN _ATN =
