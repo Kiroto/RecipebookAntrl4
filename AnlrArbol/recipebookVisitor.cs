@@ -122,6 +122,12 @@ public interface IrecipebookVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitIngredient_list_item([NotNull] recipebookParser.Ingredient_list_itemContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="recipebookParser.measure"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMeasure([NotNull] recipebookParser.MeasureContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="recipebookParser.ingredient_name"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

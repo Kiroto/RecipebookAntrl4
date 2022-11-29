@@ -13,7 +13,8 @@ recipe_tag: LINE_START REC_LBL SEP WS recipe_name NL;
 recipe_name: TEXT;
 
 // portion
-portions_tag: LINE_START POR_LBL SEP WS amount WS portion_unit NL;
+portions_tag:
+	LINE_START POR_LBL SEP WS amount WS portion_unit NL;
 portion_unit: TEXT;
 
 // prep time
@@ -31,12 +32,13 @@ calorie_unit: TEXT;
 ingredients_tag: LINE_START ING_LBL SEP NL ingredient_list NL;
 ingredient_list:
 	ingredient_list_item (COM NL ingredient_list_item)*;
-ingredient_list_item: TAB amount WS ingredient_name;
+ingredient_list_item:
+	TAB amount WS (measure WS)? ingredient_name;
+measure: MEASURE_UNIT;
 ingredient_name: TEXT;
 
 // elaboration
-elaboration_tag:
-	LINE_START ELA_LBL SEP NL elaboration_list NL?;
+elaboration_tag: LINE_START ELA_LBL SEP NL elaboration_list NL?;
 elaboration_list:
 	elaboration_list_item (NL elaboration_list_item)*;
 elaboration_list_item: TAB list_order WS instruction;
@@ -46,16 +48,7 @@ instruction: TEXT;
 
 // General units
 time: amount WS time_unit;
-time_unit: (
-		'min'
-		| 'minute'
-		| 'sec'
-		| 'second'
-		| 'hr'
-		| 'hour'
-		| 'day'
-	) 's'?;
-
+time_unit: TIME_UNIT;
 amount: NUMBER;
 
 // Terminals
@@ -77,10 +70,19 @@ TAB: '\t';
 WS: ' '+;
 NL: '\n';
 
-
-TEXT: WORD (WS WORD)*;
-WORD: [A-Za-z_]+;
 NUMBER: INTEGER | FLOAT;
 FLOAT: [0-9]+ '.' [0-9]+;
 INTEGER: [0-9]+;
 CARRRET: '\r' -> skip;
+MEASURE_UNIT: ('taza' | 'cucharadita') 's'?;
+TIME_UNIT: (
+		'min'
+		| 'minute'
+		| 'sec'
+		| 'second'
+		| 'hr'
+		| 'hour'
+		| 'day'
+	) 's'?;
+TEXT: WORD (WS WORD)*;
+WORD: [A-Za-z_]+;
