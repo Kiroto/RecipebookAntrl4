@@ -12,6 +12,9 @@ internal class Program
         var tree = parser.recipebook();
 
         var visitor = new AnalizadorRecipeBook();
-        visitor.Visit(tree);
+        var rtrn = visitor.Visit(tree);
+        rtrn.GetAllInserts().ForEach( insert =>
+            Console.WriteLine(insert));
+        Console.ReadLine();
     }
 }
