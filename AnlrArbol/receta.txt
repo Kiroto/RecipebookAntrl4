@@ -22,7 +22,7 @@
 	4) Licuar
 	5) Beberselo en el vaso de la licuadora
 	6) Fin
-- RECETA: Pudin de pan
+- RECETA: Pizza
 - PORCIONES: 2 jartones
 - CALORIAS: 2000 calorias
 - INGREDIENTES:

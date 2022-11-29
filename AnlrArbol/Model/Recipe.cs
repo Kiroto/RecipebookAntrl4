@@ -47,7 +47,7 @@ namespace AnlrArbol.Model
                 prepTimeUnit = prepTime.unit.ToString();
             }
 
-            return $"{id}, {name}, {portions}, {prepTimeAmount}, {prepTimeUnit}, {cookTimeAmount}, {cookTimeUnit}, {calories}";
+            return $"{id}, '{name}', {portions}, {prepTimeAmount}, '{prepTimeUnit}', {cookTimeAmount}, '{cookTimeUnit}', {calories}";
         }
     }
 }
