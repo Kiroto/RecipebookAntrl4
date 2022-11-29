@@ -26,6 +26,6 @@ namespace AnlrArbol.Model
 
         public string TableName => "Ingredient";
 
-        public string InsertValues => $"{id}, {recipe.id}, {name}, {quantity}, {(unit != null ? unit.id.ToString() : "null")}";
+        public string InsertValues => $"{id}, {recipe.id}, '{name}', {quantity}, {(unit != null ? unit.id.ToString() : "null")}";
     }
 }
