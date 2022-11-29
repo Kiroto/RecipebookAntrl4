@@ -24,6 +24,6 @@ namespace AnlrArbol.Model
 
         public string TableName => "CookingSteps";
 
-        string SQLizable.InsertValues => $"{id}, {recipe.id}, {stepNumber}, {description}";
+        string SQLizable.InsertValues => $"{id}, {recipe.id}, {stepNumber}, \"{description}\"";
     }
 }

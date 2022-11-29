@@ -30,6 +30,6 @@ namespace AnlrArbol.Model
 
         public string TableName => "IngredientUnit";
 
-        public string InsertValues => $"{id}, {name}";
+        public string InsertValues => $"{id}, \"{name}\"";
     }
 }

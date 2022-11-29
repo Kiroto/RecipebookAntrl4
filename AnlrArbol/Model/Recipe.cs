@@ -38,16 +38,16 @@ namespace AnlrArbol.Model
 
             if (cookTime != null)
             {
-                cookTimeAmount = cookTime.amount.ToString();
-                cookTimeUnit = cookTime.unit.ToString();
+                cookTimeAmount =    cookTime.amount.ToString();
+                cookTimeUnit =      $"\"{cookTime.unit.ToString()}\"";
             }
             if (prepTime != null)
             {
                 prepTimeAmount = prepTime.amount.ToString();
-                prepTimeUnit = prepTime.unit.ToString();
+                prepTimeUnit = $"\"{prepTime.unit.ToString()}\"";
             }
 
-            return $"{id}, {name}, {portions}, {prepTimeAmount}, {prepTimeUnit}, {cookTimeAmount}, {cookTimeUnit}, {calories}";
+            return $"{id}, \"{name}\", {portions}, {prepTimeAmount}, {prepTimeUnit}, {cookTimeAmount}, {cookTimeUnit}, {calories}";
         }
     }
 }
