@@ -52,6 +52,7 @@ time_unit: TIME_UNIT;
 amount: NUMBER;
 
 text: WORD | WORD (WS WORD)*;
+// DELETE THIS CONTENT IF YOU PUT COMBINED GRAMMAR IN Parser TAB
 
 // Terminals
 LINE_START: GUION WS;
@@ -75,14 +76,7 @@ TIME_UNIT: (
 		| 'day'
 	) 's'?;
 
-MEASURE_UNIT: (
-		'taza'
-		| 'cucharadita'
-		| 'cup'
-		| 'guieno'
-		| 'batata'
-		| 'cucharada'
-	) 's'?;
+MEASURE_UNIT: ( 'taza' | 'cucharadita' | 'cucharada') 's'?;
 
 WORD: [A-Za-z_]+;
 
